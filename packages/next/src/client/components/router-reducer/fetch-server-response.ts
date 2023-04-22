@@ -34,7 +34,12 @@ export async function fetchServerResponse(
     // Enable flight response
     [RSC]: '1',
     // Provide the current router state
-    [NEXT_ROUTER_STATE_TREE]: JSON.stringify(flightRouterState),
+    [NEXT_ROUTER_STATE_TREE]: JSON.stringify(flightRouterState)
+      // Escape unicode characters
+      .replace(
+        /[\u0080-\uffff]/g,
+        (c) => `\\u${`0000${c.charCodeAt(0).toString(16)}`.slice(-4)}`
+      ),
   }
   if (prefetch) {
     // Enable prefetch response
