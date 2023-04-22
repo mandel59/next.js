@@ -1,6 +1,6 @@
 {
-  "name": "next",
-  "version": "13.3.1",
+  "name": "@mandel59/next",
+  "version": "13.3.1-fixunicode.0",
   "description": "The React Framework",
   "main": "./dist/server/next.js",
   "license": "MIT",
